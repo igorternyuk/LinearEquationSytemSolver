@@ -1259,24 +1259,16 @@ namespace iat {
     template <typename T>
     std::ostream& operator<<(std::ostream &stream, Matrix<T> &matrix)
     {
-        for(int i = 0; i < matrix.getRowCount(); ++i)
-        {
-            for(int j = 0; j < matrix.getColumnCount(); ++j)
-               stream << matrix[i][j] << " ";
-            stream << std::endl;
-        }
+        std::ostringstream oss;
+        oss << matrix;
+        stream << oss.str();
         return stream;
     }
 
     template <typename T>
     std::ostream& operator<<(std::ostream &stream, Matrix<T> &&matrix)
     {
-        for(int i = 0; i < matrix.getRowCount(); ++i)
-        {
-            for(int j = 0; j < matrix.getColumnCount(); ++j)
-               stream << std::move(matrix[i][j]) << " ";
-            stream << std::endl;
-        }
+        stream << matrix;
         return stream;
     }
 
@@ -1296,24 +1288,16 @@ namespace iat {
     template <typename T>
     std::ofstream& operator<< (std::ofstream &stream, Matrix<T> &matrix)
     {
-        for(int i = 0; i < matrix.getRowCount(); ++i)
-        {
-            for(int j = 0; j < matrix.getColumnCount(); ++j)
-                stream << matrix[i][j] << " ";
-            stream << std::endl;
-        }
+        std::ostringstream oss;
+        oss << matrix;
+        stream << oss.str();
         return stream;
     }
 
     template <typename T>
     std::ofstream& operator<<(std::ofstream &stream, Matrix<T> &&matrix)
     {
-        for(int i = 0; i < matrix.getRowCount(); ++i)
-        {
-            for(int j = 0; j < matrix.getColumnCount(); ++j)
-                stream << std::move(matrix[i][j]) << " ";
-            stream << std::endl;
-        }
+        stream << matrix;
         return stream;
     }
 
@@ -1347,12 +1331,7 @@ namespace iat {
     template <typename T>
     std::ostringstream& operator<<(std::ostringstream &sstream, Matrix<T> &&matrix)
     {
-        for(int i = 0; i < matrix.getRowCount(); ++i)
-        {
-            for(int j = 0; j < matrix.getColumnCount(); ++j)
-                sstream << std::move(matrix[i][j]) << " ";
-            sstream << std::endl;
-        }
+        sstream << matrix;
         return sstream;
     }
 }
