@@ -11,17 +11,16 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = SLAU
 TEMPLATE = app
 
-DEFINES += DEBUG
+DEFINES -= DEBUG
 
 SOURCES += main.cpp\
         widget.cpp \
     doublespinboxdelegate.cpp \
-    matrix_error.cpp
+    matrix.cpp
 
 HEADERS  += widget.h \
     matrix.h \
-    doublespinboxdelegate.h \
-    matrix_error.h
+    doublespinboxdelegate.h
 
 FORMS    += widget.ui
 

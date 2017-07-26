@@ -1,4 +1,4 @@
-#include "matrix_error.h"
+#include "matrix.h"
 #include <sstream>
 
 const std::map<iat::MatrixErrorCode, std::string> iat::ErrorMatrix::_matrixErrors =
